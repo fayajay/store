@@ -20,7 +20,7 @@
             <c:import url="_MENU.jsp"/>
         </div>
         <div class="contenu">
-            Bonjour
+            Bonjour     
         </div>
         <div class="pied">
             <c:import url="_PIED.jsp"/>

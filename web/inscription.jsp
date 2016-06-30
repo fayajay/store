@@ -1,6 +1,6 @@
 <%-- 
-    Document   : home
-    Created on : 29 juin 2016, 15:30:21
+    Document   : _TEMPLATES
+    Created on : 24 juin 2016, 14:51:47
     Author     : admin
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -9,27 +9,23 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>QUIZZ</title>
         <c:import url="_STYLESHEET.jsp"/>
     </head>
     <body>
         <div class="titre">
             <c:import url="_TITRE.jsp"/>
         </div>
-        <div class="menu">  
-            <c:choose>
-                <c:when test="${utilConnecte.login==null}">
-                    <a class="menu" href="connexion">Connexion</a>
-                </c:when>
-                <c:otherwise>
-                    <a class="menu" href="deconnexion">Déconnexion</a>
-                </c:otherwise>
-            </c:choose>
-
-            <a class="menu" href="inscription">Inscription</a>
-        </div>
+        <h2 class="menu">Inscription</h2>
         <div class="contenu">
-            Bonjour     
+            <form method="POST">
+                Identifiant : <input type="text" name="login"/><br/>
+                Mot de Passe : <input type="password" name="mdp"/><br/>
+                Adresse : <input type="text" name="adresse"/><br/>
+
+                <input type="submit" value="connexion"/>
+                <input type="reset" value="annuler"/>
+            </form> 
         </div>
         <div class="pied">
             <c:import url="_PIED.jsp"/>
@@ -37,4 +33,3 @@
 
     </body>
 </html>
-

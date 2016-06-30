@@ -85,6 +85,9 @@ public class Utilisateur implements Serializable {
     public void setUtilType(UtilType utilType) {
         this.utilType = utilType;
     }
+
+    public Utilisateur() {
+    }
     
     
 

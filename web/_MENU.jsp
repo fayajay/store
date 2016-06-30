@@ -6,6 +6,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<a class="menu" href="connexion">Connexion</a>
-<a class="menu" href="#">Déconnexion</a>
-<a class="menu" href="formNewQuiz">Nouveau Quizz</a>
+
+<c:if test="${utilConnecte.login==null}">
+    <a class="menu" href="connexion">Connexion</a>
+</c:if>
+<c:if test="${utilConnecte.login!=null}">
+    <a class="menu" href="deconnexion">Déconnexion</a>
+</c:if>
+

@@ -12,34 +12,36 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import store.entity.Utilisateur;
-import store.service.UtilisateurService;
+import store.entity.Article;
+import store.service.ArticleService;
 
 /**
  *
  * @author admin
  */
-@WebServlet(name = "ConnexionServlet", urlPatterns = {"/connexion"})
-public class ConnexionServlet extends HttpServlet {
+@WebServlet(name = "AjouterArticleServlet", urlPatterns = {"/ajouterArticle"})
+public class AjouterArticleServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        req.getRequestDispatcher("connexion.jsp").forward(req, resp);
+        req.getRequestDispatcher("ajouterArticle.jsp").forward(req, resp);
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        String login = req.getParameter("login");
-        String mdp = req.getParameter("mdp");
+        Article a = new Article();
+        a.setNom(req.getParameter("nom"));
+        a.setPrix(Long.parseLong(req.getParameter("prix")));
+        a.setStock(Integer.parseInt(req.getParameter("stock")));
         
-        Utilisateur u = new UtilisateurService().connexion(login, mdp);
-        
-        // je suis logué correctement
-        req.getSession().setAttribute("utilConnecte", u);
+        ArticleService aserv = new ArticleService();
+        aserv.enregistrerNewArticle(a);
         
         resp.sendRedirect("listeArticle");
     }
+
+
 
 }

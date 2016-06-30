@@ -19,25 +19,28 @@ import store.service.UtilisateurService;
  *
  * @author admin
  */
-@WebServlet(name = "ConnexionServlet", urlPatterns = {"/connexion"})
-public class ConnexionServlet extends HttpServlet {
+@WebServlet(name = "InscriptionServlet", urlPatterns = {"/inscription"})
+public class InscriptionServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        req.getRequestDispatcher("connexion.jsp").forward(req, resp);
+        req.getRequestDispatcher("inscription.jsp").forward(req, resp);
     }
     
-    @Override
+        @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        String login = req.getParameter("login");
-        String mdp = req.getParameter("mdp");
+        Utilisateur u = new Utilisateur();
         
-        Utilisateur u = new UtilisateurService().connexion(login, mdp);
+        u.setLogin(req.getParameter("login"));
+        u.setMdp(req.getParameter("mdp"));
+        u.setAdresse(req.getParameter("adresse"));
         
-        // je suis logué correctement
-        req.getSession().setAttribute("utilConnecte", u);
+        
+        UtilisateurService us = new UtilisateurService();
+   
+        us.inscription(u);
         
         resp.sendRedirect("listeArticle");
     }

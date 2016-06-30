@@ -19,7 +19,7 @@
         <h2 class="menu">Connexion</h2>
         
         <div class="contenu">
-            <a href="ajouterArticle"<h2 class="menu">Ajouter Article</h2></a>
+            
             <form method="POST">
                 Identifiant : <input type="text" name="login"/>
                 Mot de Passe : <input type="password" name="mdp"/><br/>

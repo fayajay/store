@@ -45,9 +45,6 @@ public class ListeArticleServlet extends HttpServlet {
         aserv.modifierStockArticle(a);
         resp.sendRedirect("listeArticle");
         
-        
     }
-
-    
     
 }

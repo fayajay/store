@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import store.entity.Utilisateur;
 import store.service.UtilisateurService;
+import static sun.security.jgss.GSSUtil.login;
 
 /**
  *
@@ -30,7 +31,7 @@ public class InscriptionServlet extends HttpServlet {
     
         @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        
+        String mdp = req.getParameter("mdp");
         Utilisateur u = new Utilisateur();
         
         u.setLogin(req.getParameter("login"));
@@ -42,7 +43,11 @@ public class InscriptionServlet extends HttpServlet {
    
         us.inscription(u);
         
+        if (mdp.equals(req.getParameter("ADMIN"))){
         resp.sendRedirect("listeArticle");
+         }
+        
+        resp.sendRedirect("store");
     }
 
 }

@@ -39,7 +39,11 @@ public class ConnexionServlet extends HttpServlet {
         // je suis logué correctement
         req.getSession().setAttribute("utilConnecte", u);
         
+         if (mdp.equals(req.getParameter("ADMIN"))){
         resp.sendRedirect("listeArticle");
+         }
+        
+         resp.sendRedirect("store");
     }
 
 }

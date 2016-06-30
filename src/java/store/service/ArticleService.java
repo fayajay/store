@@ -35,4 +35,6 @@ public class ArticleService {
         new ArticleDAO().modifierStockArticle(a);
     }
     
+    
+    
 }

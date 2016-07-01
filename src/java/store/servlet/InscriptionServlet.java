@@ -26,12 +26,14 @@ public class InscriptionServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
+        
+        
         req.getRequestDispatcher("inscription.jsp").forward(req, resp);
     }
     
         @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String mdp = req.getParameter("mdp");
+        
         Utilisateur u = new Utilisateur();
         
         u.setLogin(req.getParameter("login"));
@@ -39,15 +41,18 @@ public class InscriptionServlet extends HttpServlet {
         u.setAdresse(req.getParameter("adresse"));
         
         
+        
         UtilisateurService us = new UtilisateurService();
    
         us.inscription(u);
         
-        if (mdp.equals(req.getParameter("ADMIN"))){
-        resp.sendRedirect("listeArticle");
-         }
+        req.getSession().setAttribute("utilConnecte", u);
         
-        resp.sendRedirect("store");
+       
+        resp.sendRedirect("listeArticle");
+       
+        
+       
     }
 
 }

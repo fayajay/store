@@ -19,10 +19,15 @@
         <h2 class="menu">Inscription</h2>
         <div class="contenu">
             <form method="POST">
-                Identifiant : <input type="text" name="login"/><br/>
-                Mot de Passe : <input type="password" name="mdp"/><br/>
-                Adresse : <input type="text" name="adresse"/><br/>
-
+                <p>Identifiant : <input type="text" name="login"/></p>
+                <p>Mot de Passe : <input type="password" name="mdp"/></p>
+                <p>Adresse : <input type="text" name="adresse"/></p>
+                <select name="select">
+                    <option value="ADMIN">ADMIN</option> 
+                    <option value="CLIENT" selected>CLIENT</option>
+                    <option value="EQUIPEEXP">EQUIPEEXP</option>
+                </select>
+                <br/>
                 <input type="submit" value="connexion"/>
                 <input type="reset" value="annuler"/>
             </form> 

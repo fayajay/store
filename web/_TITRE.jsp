@@ -6,5 +6,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
-<a id="title" href="home"><h1>The HEAVEN's Store</h1></a>
+<a id="title" href="store"><h1>The HEAVEN's Store</h1></a>
 

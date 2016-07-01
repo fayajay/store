@@ -21,9 +21,9 @@
         </div>
         <div class="contenu">
             <form method="POST">
-                Nom de l'article : <input type="text" name="nom"/><br/>
-                Prix : <input type="text" name="prix"/><br/>
-                Stock : <input type="text" name="stock"/><br/>
+                <p>Nom de l'article : <input type="text" name="nom"/></p>
+                <p>Prix : <input type="text" name="prix"/></p>
+                <p>Stock : <input type="text" name="stock"/></p>
 
                 <input type="submit" value="ajouter"/>
                 <input type="reset" value="annuler"/>

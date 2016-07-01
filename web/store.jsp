@@ -18,9 +18,12 @@
         </div>
         <div class="menu">
             <c:import url="_MENU.jsp"/>
+            <a class="menu" href="ajouterArticle">Ajouter Article</a>
+            <a class="menu" href="listeArticle">Modifier Stock</a>
+            <a class="menu" href="panier">Panier</a>
         </div>
         <div class="contenu">
-                        <table>
+            <table>
                 <tr>
                     <th>ARTICLE</th>
                     <th>PRIX</th>
@@ -33,7 +36,7 @@
                         <td>${a.prix}€</td>
                         <td>${a.stock}</td>
                     <form method="POST">
-                        <td><input type="hidden" name="id" value="${a.id}"/><input type="number" name="ajouterPanier"/><input type="submit" value="ajouter Au Panier"</p></td>
+                        <td><input type="hidden" name="id" value="${a.id}"/><input type="number" name="ajouterPanier"/><input type="submit" value="Ajouter au Panier"</p></td>
                     </form>
                     </tr>
                 </c:forEach> 
@@ -42,6 +45,6 @@
         <div class="pied">
             <c:import url="_PIED.jsp"/>
         </div>
-        
+
     </body>
 </html>

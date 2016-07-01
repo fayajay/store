@@ -16,21 +16,21 @@
         <div class="titre">
             <c:import url="_TITRE.jsp"/>
         </div>
-        <h2 class="menu">Connexion</h2>
-
+        <div class="menu">
+            <c:import url="_MENU.jsp"/>
+        </div>
         <div class="contenu">
-
-            <form method="POST">
-                Identifiant : <input type="text" name="login"/>
-                Mot de Passe : <input type="password" name="mdp"/><br/>
-
-                <input type="submit" value="connexion"/>
-                <input type="reset" value="annuler"/>
-            </form>
+            <h2>PANIER</h2>  
+            
+            <c:forEach items="${article}" var="a">
+                ${a.nom}  ${a.prix} ${a.stock}
+                
+            </c:forEach>
+            
         </div>
         <div class="pied">
             <c:import url="_PIED.jsp"/>
         </div>
-
+        
     </body>
 </html>

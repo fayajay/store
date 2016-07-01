@@ -18,20 +18,41 @@ import store.service.ArticleService;
 
 /**
  *
- * @author kellyleclerc
+ * @author admin
  */
 @WebServlet(name = "StoreServlet", urlPatterns = {"/store"})
 public class StoreServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-   
-        ArticleService aserv = new ArticleService();
-        List<Article> store = aserv.listerArticle();
         
-        req.setAttribute("article", store);
+        ArticleService aserv = new ArticleService();
+        List<Article> articleEnStock = aserv.listerArticle();
+        
+        req.setAttribute("article", articleEnStock);
         
         req.getRequestDispatcher("store.jsp").forward(req, resp);
+        
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        
+        /*Article a = new ArticleService().rechercherParId(Long.parseLong(req.getParameter("id")));
+        a.setStock(Integer.parseInt(req.getParameter("ajouterPanier")));
+        
+        ArticleService aserv = new ArticleService();*/
+        
+        //resp.sendRedirect("panier");
+        
+        Article a = new ArticleService().rechercherParId(Long.parseLong(req.getParameter("id")));
+        
+        a.setStock(Integer.parseInt(req.getParameter("ajouterPanier")));
+        
+        ArticleService aserv = new ArticleService();
+        aserv.modifierStockArticle(a);
+        
+        resp.sendRedirect("panier");
+        
+    }
 }

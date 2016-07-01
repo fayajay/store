@@ -22,8 +22,6 @@ public class UtilisateurService {
         return dao.connexion(login, mdp);
     }
     
-
-
     public void inscription(Utilisateur u) {
 
         UtilisateurDAO dao = new UtilisateurDAO();
@@ -35,8 +33,8 @@ public class UtilisateurService {
         }
 
         dao.ajouterUtilisateur(u);
-
-
     }
+    
+    
 
 }

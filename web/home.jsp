@@ -14,7 +14,7 @@
     </head>
     <body>
         <div class="titre">
-            <c:import url="_TITRE.jsp"/>
+            <h1>The HEAVEN's Store</h1>
         </div>
         <div class="menu">  
             <c:choose>

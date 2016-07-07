@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script src="js/jquery.min.js"></script>
+
+
+    </head>
+    <body>
+
+        <!-- ex 1-->
+        <div id=contenu>
+            <h1>Lorem ipsum dolor sit amet</h1>
+            <p>Un paragraphe de test</p>
+            <ul>
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ul>
+        </div>
+        <!-- ex 2 -->
+        <div id="wrapper">
+            <p>First paragraph</p>
+            <p>Second paragraph</p>
+        </div>
+        <button id="create_element">Create new paragraph</button>
+
+        <script>
+
+             //ex 1 
+             $(document).ready(function() {
+             $("#contenu > h1").css('text-transform', 'uppercase');
+             $("li:first").css('color', 'red') ;
+             });
+             
+             //ex 2 
+            $(document).ready(function () {
+                $("#wrapper > p").on('click', function () {
+                    $(this).css('color', 'red');
+                });
+
+                $("#create_element").on('click', function () {
+                    $("#wrapper").append("<p>Third paragraph</p>");
+                });
+            });
+
+
+        </script>
+
+    </body>
+</html>

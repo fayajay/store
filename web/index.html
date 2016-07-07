@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body >
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 1 : 
+        <div id="gilou">
+            <h1>Allez viens boire un petit coup à la maison</h1>
+            <p id="ennonce">il y a <strong>Gilou</strong> avec son petit <a id="accordeon" href="#">accordeon</a> et <strong>Ginette</strong> toujours prête à relever son jupon, 
+                vive les merguez, le pastis et les nichons !!!!
+            </p>
+            Les élements de la fête :
+            <ul>
+                <li>Pastis</li>
+                <li>Merguez</li>
+                <li>Glaçons</li>
+                <li>Accordeon</li>
+                <li>Nichons</li>
+            </ul>
+            Les collègues : 
+            <ol>
+                <li>Gilou</li>
+                <li>Ginette</li>
+            </ol>
+        </div>
+        <script>
+            document.getElementById("ennonce").style.color = "#EFA0FF";
+        </script>
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 2 : 
+<br/>
+        <table id="myTable" border="1">
+            <tr>
+                <td>Ligne1 cell1</td>
+                <td>Ligne1 cell2</td>
+            </tr>
+            <tr>
+                <td>Ligne2 cell1</td>
+                <td>Ligne2 cell2</td>
+            </tr>
+        </table>
+        <button id="insertNewRow" onclick="insertRow" value="ajouter ligne"></button><br/>
+        <script>
+function insertRow(){
+    var foo = document.getElementById('myTable').insertRow(0);
+    var cell1 = foo.insertCell(0);
+    var cell2 = foo.insertCell(1);
+    
+    cell1.innerHTML = "NewLigne cell1";
+    cell2.innerHTML = "NewLigne cell2";
+}
+</script>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 3 : 
+<br/>
+<h2>Tirage au sort</h2>
+
+<script>
+function random(min, max) {
+    return Math.floor(Math.random()*(12-1+1))+1;
+}
+</script>
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 4 : 
+<br/>
+<table id="table" border="1"></table>
+<button onclick="create()">Créer un tableau</button><br/>
+<script>
+    
+    function create() {
+             nbColonne = window.prompt("Nb de ligne",1);
+             nbLigne = window.prompt("Nb de colonnes",1);
+             
+             for (var r = 0; r < parseInt(nbColonne,10);r++) {
+                 var x = document.getElementById('table').insertRow(r);
+                 for (var c = 0; c < parseInt(nbLigne,10);c++) {
+                     var y = x.insertCell(c);
+                     y.innerHTML="Ligne"+ r +" , colonne"+ c;
+                 }
+             }
+    }
+
+</script>        
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 5 : <br/>
+
+<select name="pays" id="pays">
+    <option value="france">France</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+    <option value="Allemagne">Allemagne</option>
+</select>
+<button onclick="remove()">remove</button><br/>
+<script>
+    var element = document.getElementById("pays");
+    element.remove(element.selectedIndex);
+    
+</script>
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------<br/>
+Exercice 6 : <br/>
+<img src="" id="image"/>
+
+<button onclick="randomImage()">Changer l'image</button>
+<script>
+     image1 = new Image(100, 150);
+     image1.src = "./CSS/img/pigeon.jpg";
+     
+     image2 = new Image(100, 150);
+     image2.src = "./CSS/img/chat.png";
+     
+     image3 = new Image(100, 150);
+     image3.src = "./CSS/img/pandaRoux.jpg"
+
+    
+    function randomImage() {
+        var tabImage = new Array();
+        tabImage[0] = image1;
+        tabImage[1] = image2;
+        tabImage[2] = image3;
+        
+        var nb = Math.floor(Math.random()*3);
+        
+        
+        document.getElementById('image').appendChild(tabImage[nb]);
+        //document.getElementById('image').src = tabImage[nb]
+    }
+</script>
+
+
+    </body>
+</html>

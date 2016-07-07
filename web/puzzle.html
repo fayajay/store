@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>PUZZLE</h1>
+        <table id="container">
+            <tr>
+                <td id="img01"></td>
+                <td id="img02"></td>
+                <td id="img03"></td>
+                <td id="img04"></td>
+            </tr>
+            <tr>
+                <td id="img05"></td>
+                <td id="img06"></td>
+                <td id="img07"></td>
+                <td id="img08"></td>
+            </tr>
+            <tr>
+                <td id="img09"></td>
+                <td id="img10"></td>
+                <td id="img11"></td>
+                <td id="img12"></td>
+            </tr>
+            <tr>
+                <td id="img13"></td>
+                <td id="img14"></td>
+                <td id="img15"></td>
+                <td id="img16"></td>
+            </tr>
+            <button onclick="">Modifier Puzzle</button>
+        </table>
+
+        <script>
+
+            var tabImg = [
+                [
+                    {
+                        src: "./CSS/img/image_oiseau/img01.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img02.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img03.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img04.jpeg"
+                    }
+                ],
+                [
+                    {
+                        src: "./CSS/img/image_oiseau/img05.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img06.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img07.jpeg"
+                    },
+                    {
+                        src: "./CSS/img/image_oiseau/img08.jpeg"
+                    }
+                ],
+                [
+                    {
+                        src: "./CSS/img/image_oiseau/img09.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img10.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img11.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img12.jpeg"
+                    }
+                ],
+                [
+                    {
+                        src: "./CSS/img/image_oiseau/img13.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img14.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img15.jpeg"
+                    }, 
+                    {
+                        src: "./CSS/img/image_oiseau/img16.jpeg"
+                    }
+                ]
+            ];
+
+            function getRandom(min, max ) {
+                return Math.floor(Math.random()*(max - min + 1)) + min; 
+            }
+            
+            function genererTab() {
+                var nbLignes = tabImg.length;
+                var nbColonnes = tabImg[0].length;
+                var imgBuffer = [];
+                for (var i = 0; i < nbLignes; i++) {
+                    imgBuffer.push([]);
+                    for (var j = 0; j < nbColonnes; j++) {
+
+                        imgBuffer[i][j] = new Image();
+                        imgBuffer[i][j].src = tabImg[i][j].src;
+
+                        
+                        var container = document.getElementById("img" + i + j);
+                        container.innerHTML = 'imgBuffer[1][2]';
+                        
+                    }
+                }
+            }
+
+            function melangerTab() {
+                
+            }
+              
+        </script>
+
+
+
+
+    </body>
+</html>

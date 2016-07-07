@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.min.js"></script>
+    </head>
+    <body>
+
+        <form action="jq_Ajax" id="searchForm">
+            <input type="text" name="s" placeholder="Rechercher...">
+            <input type="submit" value="Search">
+        </form>
+        <div id="result"></div>
+        <div id="error"></div>
+
+
+        <script>
+            $(document).ready(function () {
+                $("#searchForm").submit(function (e) {
+                    e.preventDefault();
+
+                    $.ajax({
+                        method: "POST",
+                        url: $(this).attr("action"),
+                        data: $(this).serialize(),
+                        dataType: "html",
+                        success: function (data) {
+                            $('#result').html(data);
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            $('#error').html(errorThrown.toString());
+                        }
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>

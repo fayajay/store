@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <span id="helper">Des aides seront affichées ici</span>
+        <p>Email : <input type="text" id="email" /></p>
+        <p>Nom : <input type="text" id="name" /></p>
+        <p>Age : <input type="text" id="age" /></p>
+
+
+        <script>
+            var tabMessage = [
+                {
+                    id: "email",
+                    message: "entrez votre email"
+                },
+                {
+                    id: "name",
+                    message: "entrez votre nom"
+                },
+                {
+                    id: "age",
+                    message: "entrez votre age"
+                }
+            ];
+
+            /*document.getElementById("email").onfocus = function () {
+             myFunction()
+             };
+             
+             function myFunction() {
+             document.getElementById("email").style.backgroundColor = "red";
+             }*/
+
+            function myClosure(id, message) {
+                
+                document.getElementById(id).onfocus = function () {
+                    document.getElementById("helper").innerHTML = message;
+                }
+            }
+
+                for (var i = 0; i < tabMessage.length; i++) {
+
+                    var id = tabMessage[i].id;
+                    var message = tabMessage[i].message;
+                    myClosure(id, message);
+                }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.min.js"></script>
+    </head>
+    <body>
+        <div>
+
+            <button id="hide">hide</button>
+            <button id="show">show</button>
+            <button id="toggle">toggle</button>
+            <button id="fadeIn">fade</button>
+            <button id="slide">slide</button>
+            <button id="animate">animate</button>
+            <button id="stop">stop</button>
+            
+            <p id="texte">SALUT LA COMPAGNIE</p>
+            <p>ON S'ECLATE COMME DES PETITS FOUFOUS</p>
+            
+        </div>
+
+        <script>
+            
+            $(document).ready(function () {
+
+                $("#hide").click(function () {
+                    $("p").hide("slow");
+                });
+                $("#show").click(function () {
+                    $("p").show("fast");
+                });
+                $("#toggle").click(function () {
+                    $("p").toggle("medium");
+                });
+                $("#fadeIn").click(function () {
+                    $("p").fadeIn("slow");
+                });
+                $("#slide").click(function () {
+                    $("p").slideToggle("slow");
+                });
+                $("#animate").click(function(){
+                    $("p").animate({
+                        left:'250px',
+                        opacity: '0.5',
+                        height: '150px',
+                        width: '150px',
+                    });
+                });
+                $("#stop").click(function(){
+                $("#p").stop();
+                });
+            });
+
+        </script>
+    </body>
+</html>

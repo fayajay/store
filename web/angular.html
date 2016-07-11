@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html><!-- ex 1 rajouter dans la balise ng-app="myApp"-->
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+   <!-- Exemple 1 
+   <body ng-controller="MyController as ctrl">
+        Name: <input ng-model="name" />
+        <p>Name: {{ name }}</p>
+        <p>Last update of name: {{last_update | date:'medium'}}</p>
+        <script src="js/angular.min.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        
+    </body>-->
+ <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------->  
+   <!-- exemple 2 
+   <body ng-app="mainApp" >
+		<div ng-controller="MainCtrl as ctrl">
+			<form name="myForm" ng-submit="ctrl.add(); myForm.$setPristine()" autocomplete="off" novalidate>
+				<fieldset>
+					Select your note :
+					<select ng-model="ctrl.object.select"
+						ng-options="rate for rate in [5, 4, 3, 2, 1,'bob']"
+						required>
+						<option value="">Rate</option>
+					</select><br />
+					Email : <input type="email" ng-model="ctrl.object.email" required/><br/>
+					Your comment :<br/>
+					<textarea ng-model="ctrl.object.text" rows="5" required></textarea><br/>
+
+					<input type="submit" value="Post" ng-disabled="myForm.$invalid"/>
+				</fieldset>
+			</form>
+			<div ng-cloak ng-repeat="object in ctrl.list">
+				<ul>
+					<li>Rate: {{object.select}}</li>
+					<li>Email: {{object.email}}</li>
+					<li>Text: {{object.text}}</li>
+				</ul>
+			</div>
+		</div>
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>-->
+<!------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- exemple 3 
+   	<body ng-app="myApp" >
+		<div ng-controller="MyController">
+			<button ng-click="sayHello('Jay')">Click Me!</button>
+		</div>
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>-->
+<!--------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+<!-- exemple 4 -->
+	<body ng-app="myApp" >
+		<div ng-controller="MyController as ctrl">
+			<button ng-click="ctrl.sayHello('Jay')">Click Me!</button>
+		</div>
+		<script src="js/angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+<!----------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+</body>
+</html>
